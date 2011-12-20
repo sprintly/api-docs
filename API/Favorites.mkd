@@ -1,1 +1,94 @@
-# Favorites
+# Overview
+
+The favorites API lets you access who has favorited a given item. Additionally, you can create and remove favorites via the API. 
+
+# `/products/{product_id}/items/{item_number}/favorites.json`
+
+## GET
+
+Return a list of user objects of users who have favorited the given `item_number`.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+    [
+        {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        }
+    ]
+
+### Error Codes
+
+* `404` If `item_number` or `product_id` are invalid or unknown.
+
+## POST
+
+Sending an empty HTTP `POST` to this endpoint will favorite the given `item_number` on behalf of the user making the request.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+    {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    }
+
+### Error Codes
+
+* `404` If `item_number` or `product_id` are invalid or unknown.
+
+# `/products/{product_id}/items/{item_number}/favorites/{favorite_id}.json`
+
+## GET
+
+Return the user object for who created the given `favorite_id`.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+    {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    }
+
+### Error Codes
+
+* `404` If `favorite_id` is invalid or unknown.
+
+## DELETE
+
+Delete a the given `favorite_id`.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+    {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    }
+
+### Error Codes
+
+* `404` If `favorite_id` is invalid or unknown.
+* `403` If the requesting user was not the user who created the `favorite_id`.
