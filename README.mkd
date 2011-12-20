@@ -1,0 +1,8 @@
+# Sprint.ly Documentation
+
+## Introduction
+
+You are looking at the source to all of Sprint.ly's documentation. We aim for excellence here at Sprint.ly, but sometimes we miss things. There are two ways in which you can contribute to the documentation:
+
+1. Go to http://support.sprint.ly and submit a bug there.
+2. Fork this repository and submit a pull request.
