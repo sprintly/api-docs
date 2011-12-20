@@ -14,6 +14,78 @@ This endpoint takes no arguments.
 
 ### Example Response
 
+    [
+        {
+            "user": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "item": {
+                "status": "backlog",
+                "product": {
+                    "archived": false,
+                    "id": 1,
+                    "name": "sprint.ly"
+                },
+                "description": "Require people to estimate the score of an item before they can start working on it.",
+                "tags": [
+                    "scoring",
+                    "backlog"
+                ],
+                "number": 188,
+                "archived": false,
+                "title": "Don't let un-scored items out of the backlog.",
+                "created_by": {
+                    "first_name": "Joe",
+                    "last_name": "Stump",
+                    "id": 1,
+                    "email": "joe@joestump.net"
+                },
+                "score": 3,
+                "assigned_to": {
+                    "first_name": "Joe",
+                    "last_name": "Stump",
+                    "id": 1,
+                    "email": "joe@joestump.net"
+                },
+                "type": "task"
+            },
+            "blocked": {
+                "status": "accepted",
+                "product": {
+                    "archived": false,
+                    "id": 1,
+                    "name": "sprint.ly"
+                },
+                "description": "",
+                "tags": [
+                    "scoring",
+                    "backlog"
+                ],
+                "number": 208,
+                "archived": false,
+                "title": "Add the ability to reply to comments via email.",
+                "created_by": {
+                    "first_name": "Joe",
+                    "last_name": "Stump",
+                    "id": 1,
+                    "email": "joe@joestump.net"
+                },
+                "score": 3,
+                "assigned_to": {
+                    "first_name": "Joe",
+                    "last_name": "Stump",
+                    "id": 1,
+                    "email": "joe@joestump.net"
+                },
+                "type": "task"
+            },
+            "unblocked": true
+        }
+    ]
+
 ### Error Codes
 
 * `404` if `product_id` or `item_number` are invalid or unknown.
@@ -21,35 +93,178 @@ This endpoint takes no arguments.
 
 ## POST
 
+When you send a POST to this URI with the `blocked` argument, the requesting user is creating a new block in the system which is indicating that `item_number` is blocking the item number indicated by the `blocked` argument. This API call will kick off an email telling the `assigned_to` user of `item_number` that they are blocking the requesting user on `blocked`.
+
 ### Arguments
+
+* `blocked` The item number of the item being blocked by `item_number`.
 
 ### Example Response
 
+    {
+        "user": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "item": {
+            "status": "backlog",
+            "product": {
+                "archived": false,
+                "id": 1,
+                "name": "sprint.ly"
+            },
+            "description": "Require people to estimate the score of an item before they can start working on it.",
+            "tags": [
+                "scoring",
+                "backlog"
+            ],
+            "number": 188,
+            "archived": false,
+            "title": "Don't let un-scored items out of the backlog.",
+            "created_by": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "score": 3,
+            "assigned_to": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "type": "task"
+        },
+        "blocked": {
+            "status": "accepted",
+            "product": {
+                "archived": false,
+                "id": 1,
+                "name": "sprint.ly"
+            },
+            "description": "",
+            "tags": [
+                "scoring",
+                "backlog"
+            ],
+            "number": 208,
+            "archived": false,
+            "title": "Add the ability to reply to comments via email.",
+            "created_by": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "score": 3,
+            "assigned_to": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "type": "task"
+        },
+        "unblocked": true
+    }
+
 ### Error Codes
+
+* `404` If the `item_number` or `blocked` are invalid or unknown.
+* `400` If `blocked` is not provided or is invalid.
 
 # `/products/{product_id}/items/{item_number}/blocking/{block_id}.json`
 
 ## GET
 
+Fetch a single block object by its `block_id`.
+
 ### Arguments
 
 This endpoint takes no arguments.
 
 ### Example Response
 
+    {
+        "user": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "item": {
+            "status": "backlog",
+            "product": {
+                "archived": false,
+                "id": 1,
+                "name": "sprint.ly"
+            },
+            "description": "Require people to estimate the score of an item before they can start working on it.",
+            "tags": [
+                "scoring",
+                "backlog"
+            ],
+            "number": 188,
+            "archived": false,
+            "title": "Don't let un-scored items out of the backlog.",
+            "created_by": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "score": 3,
+            "assigned_to": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "type": "task"
+        },
+        "blocked": {
+            "status": "accepted",
+            "product": {
+                "archived": false,
+                "id": 1,
+                "name": "sprint.ly"
+            },
+            "description": "",
+            "tags": [
+                "scoring",
+                "backlog"
+            ],
+            "number": 208,
+            "archived": false,
+            "title": "Add the ability to reply to comments via email.",
+            "created_by": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "score": 3,
+            "assigned_to": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "type": "task"
+        },
+        "unblocked": true
+    }
+
 ### Error Codes
 
-## POST
-
-### Arguments
-
-### Example Response
-
-### Error Codes
+* `404` if `block_id` invalid or unknown.
 
 ## DELETE
 
-Indicate that the `block_id` is no longer blocked. An email will be sent to the 
+Indicate that the `block_id` is no longer blocked. Only two users can delete a given `block_id`. The block object's `user` can delete the block. **NOTE:** This is a destructive operation that will delete the block entirely from the system. If the block object's `item`'s `assigned_to` makes the request the block `unblocked` attribute is set to `true`.
 
 ### Arguments
 
@@ -57,5 +272,76 @@ This endpoint takes no arguments.
 
 ### Example Response
 
+    {
+        "user": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "item": {
+            "status": "backlog",
+            "product": {
+                "archived": false,
+                "id": 1,
+                "name": "sprint.ly"
+            },
+            "description": "Require people to estimate the score of an item before they can start working on it.",
+            "tags": [
+                "scoring",
+                "backlog"
+            ],
+            "number": 188,
+            "archived": false,
+            "title": "Don't let un-scored items out of the backlog.",
+            "created_by": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "score": 3,
+            "assigned_to": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "type": "task"
+        },
+        "blocked": {
+            "status": "accepted",
+            "product": {
+                "archived": false,
+                "id": 1,
+                "name": "sprint.ly"
+            },
+            "description": "",
+            "tags": [
+                "scoring",
+                "backlog"
+            ],
+            "number": 208,
+            "archived": false,
+            "title": "Add the ability to reply to comments via email.",
+            "created_by": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "score": 3,
+            "assigned_to": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "type": "task"
+        },
+        "unblocked": true
+    }
+
 ### Error Codes
 
+* `403` If the requesting user is not authorized to manipulate the block.
