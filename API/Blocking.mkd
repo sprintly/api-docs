@@ -1,1 +1,61 @@
-# Blocking
+# Overview
+
+The blocking API lets you find both which items are blocking an item and what items are being blocked by a given item. Additionally, you can create new blockers via the API.
+
+# `/products/{product_id}/items/{item_number}/blocking.json`
+
+## GET
+
+Get all of the items that `item_number` is blocking. Returns a list of block objects that are comprised of the `user` who is blocking, the `item` object for `item_number` provided, and the item object, `blocked`, for the item that is blocked by the given `item_number`.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+### Error Codes
+
+* `404` if `product_id` or `item_number` are invalid or unknown.
+* `400` if the user making the request is not a member of the `product_id`.
+
+## POST
+
+### Arguments
+
+### Example Response
+
+### Error Codes
+
+# `/products/{product_id}/items/{item_number}/blocking/{block_id}.json`
+
+## GET
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+### Error Codes
+
+## POST
+
+### Arguments
+
+### Example Response
+
+### Error Codes
+
+## DELETE
+
+Indicate that the `block_id` is no longer blocked. An email will be sent to the 
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+### Error Codes
+
