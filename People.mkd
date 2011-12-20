@@ -1,0 +1,84 @@
+# Overview
+
+The people API endpoints allow you to manage the members of your various products. You can add members, fetch members for a product, or remove members.
+
+# `/api/products/{product_id}/people.json`
+
+## GET
+
+Returns a list of user records that are members of your product.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+    [
+        {
+            "admin": true,
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        }
+    ]
+
+## POST
+
+Sending a post to `/api/products/{product_id}/people.json` allows you to add invite someone to your product. All this does is kick off an invite to the `email` specified in the request. **NOTE:** The user making this API request must be an admin of the product or the account holder who created the product. Additionally, this will *not* delete the user's record from the system.
+
+### Arguments
+
+* `admin` (bool, required) Whether this person should be marked as an admin of the product.
+* `first_name` (string, required) Their first name.
+* `last_name` (string, required) Their last name.
+* `email` (string, required) The email address where we're sending the invite.
+
+### Example Response
+
+    {
+        "admin": true,
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "email": "joe@joestump.net"
+    }
+
+# `/api/products/{product_id}/people/{user_id}.json`
+
+## GET
+
+The `/api/products/{product_id}/people.json` endpoint returns a list of user records. Each user `dict` includes an `id`, which is the globally unique identifier of the respective user. You can then use this `id` to fetch a single user record via this endpoint.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+    {
+        "admin": true,
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    }
+
+
+## DELETE
+
+Sending an HTTP `DELETE` to this endpoint will remove the given user from the given product. **NOTE:** The user making this API request must be an admin of the product or the account holder who created the product. Additionally, this will *not* delete the user's record from the system.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+    {
+        "admin": true,
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    }

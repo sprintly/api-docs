@@ -1,0 +1,353 @@
+# Overview
+
+The items API allows you to fetch items from your products via the API. It gives access to various methods of filtering, adding blockers, favoriting items, getting and item's comments, etc. Basically, if you need to query for an item, or items, and manipulate them in some manner, this is the API you'd do it with.
+
+# `/products/{product_id}/items.json`
+
+## GET
+
+Query a product's items by various arguments. If no arguments are provided, it will only return items that are in the backlog and in-progress.
+
+### Arguments
+
+* `type` (string): Specify which type of items to return. Only  `story`, `task`, `defect`, and `test` are valid values.
+* `status` (string): Only return items that are in the status provided. Only `backlog`, `in-progress`, `completed`, and `accepted` are valid values.
+* `offset` (integer, default=0) A zero-index offset from which to start returning results. This, combined with `limit`, lets you page through all of your items.
+* `limit` (integer, default=20) How many items to return in the result. If a value higher than `100` is provided, it will override your value with a value of `100`.
+* `order_by` (string) Order  the result set by a specific metric. Only `priority` and `favorites` are valid values.
+* `assigned_to` (integer) The user's `id` which the item is assigned to.
+* `created_by` (integer) The user's `id` who created the item.
+* `tags` (string) A comma separated list of tags (e.g. `foo,bar,some other tag,baz`).
+
+### Example Response
+
+    [
+        {
+            "status": "backlog",
+            "product": {
+                "archived": false,
+                "id": 1,
+                "name": "sprint.ly"
+            },
+            "description": "Require people to estimate the score of an item before they can start working on it.",
+            "tags": [
+                "scoring",
+                "backlog"
+            ],
+            "number": 188,
+            "archived": false,
+            "title": "Don't let un-scored items out of the backlog.",
+            "created_by": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "score": 3,
+            "assigned_to": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "type": "task"
+        },
+        {
+            "status": "accepted",
+            "product": {
+                "archived": false,
+                "id": 1,
+                "name": "sprint.ly"
+            },
+            "description": "",
+            "tags": [
+                "scoring",
+                "backlog"
+            ],
+            "number": 208,
+            "archived": false,
+            "title": "Add the ability to reply to comments via email.",
+            "created_by": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "score": 3,
+            "assigned_to": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "type": "task"
+        }
+    ]
+
+### Error Codes
+
+* `404` if `assigned_to` or `created_by` are invalid or unknown users.
+* `400` if you provide an invalid `type`, `status`, or `order_by` value.
+
+## POST
+
+Create a new item for the given product. This endpoint allows you to create new items within your products. It will return the newly created item on success.
+
+### Arguments
+
+* `type` (string, required): What kind of item you'd like to create. Only  `story`, `task`, `defect`, and `test` are valid values.
+* `title` (string, required for `task`, `defect`, and `test`) The title of item.
+* `who` (string, required for `story`) The who part of the story.
+* `what` (string, required for `story`) The what part of the story.
+* `why` (string, required for `story`) The why part of the story.
+* `description` (string) A description detailing the item. Markdown is allowed.
+* `status` (string): Status of the new item. Default is `backlog`. Only `backlog`, `in-progress`, `completed`, and `accepted` are valid values.
+* `assigned_to` (integer) The user's `id` which the item should assigned to.
+* `tags` (string) A comma separated list of tags to assign to the item (e.g. `foo,bar,some other tag,baz`).
+
+### Example Response
+
+    {
+        "status": "backlog",
+        "product": {
+            "archived": false,
+            "id": 1,
+            "name": "sprint.ly"
+        },
+        "description": "Require people to estimate the score of an item before they can start working on it.",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 188,
+        "archived": false,
+        "title": "Don't let un-scored items out of the backlog.",
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "score": 3,
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "type": "task"
+    }
+
+### Error Codes
+
+* `404` if `assigned_to` or `created_by` are invalid or unknown users.
+* `400` if you provide an invalid `type`, `status`, or `order_by` value.
+
+# `/products/{product_id}/items/{item_number}.json`
+
+## GET
+
+Fetch the given item for the given product.
+
+### Arguments 
+
+This endpoint takes no arguments.
+
+### Example Response
+
+    {
+        "status": "accepted",
+        "product": {
+            "archived": false,
+            "id": 1,
+            "name": "sprint.ly"
+        },
+        "description": "Require people to estimate the score of an item before they can start working on it.",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 188,
+        "archived": false,
+        "title": "Don't let un-scored items out of the backlog.",
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "score": 3,
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "type": "task"
+    }
+
+## POST
+
+Update the specified item.
+
+### Arguments
+
+* `title` (string, required for `task`, `defect`, and `test`) The new title of item.
+* `who` (string, required for `story`) The new who part of the story.
+* `what` (string, required for `story`) The new what part of the story.
+* `why` (string, required for `story`) The new why part of the story.
+* `description` (string) A new description for the item. Markdown is allowed.
+* `status` (string): Change the status of the item. Only `backlog`, `in-progress`, `completed`, and `accepted` are valid values.
+* `assigned_to` (integer) The user's `id` which the item should be reassigned to.
+* `tags` (string) A comma separated list of tags to assign to the item (e.g. `foo,bar,some other tag,baz`). **WARNING:** This will replace the existing tags with the tags provided.
+
+### Example Response
+
+    {
+        "status": "accepted",
+        "product": {
+            "archived": false,
+            "id": 1,
+            "name": "sprint.ly"
+        },
+        "description": "Require people to estimate the score of an item before they can start working on it.",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 188,
+        "archived": false,
+        "title": "Don't let un-scored items out of the backlog.",
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "score": 3,
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "type": "task"
+    }
+
+
+## DELETE
+
+Archive the specified item. **NOTE:** This does not delete the item. Destructive operations are not allowed via the API on items.
+
+### Arguments 
+
+This endpoint takes no arguments.
+
+### Example Response
+
+    {
+        "status": "backlog",
+        "product": {
+            "archived": false,
+            "id": 1,
+            "name": "sprint.ly"
+        },
+        "description": "Require people to estimate the score of an item before they can start working on it.",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 188,
+        "archived": true,
+        "title": "Don't let un-scored items out of the backlog.",
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "score": 3,
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "type": "task"
+    }
+
+# `/products/{product_id}/items/{item_number}/children.json`
+
+## GET
+
+Returns any child items. **NOTE:** This only works on items that are of type `story` as they are the only type of item which are allowed to have child items.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+
+    [
+        {
+            "status": "backlog",
+            "product": {
+                "archived": false,
+                "id": 1,
+                "name": "sprint.ly"
+            },
+            "description": "Require people to estimate the score of an item before they can start working on it.",
+            "tags": [
+                "scoring",
+                "backlog"
+            ],
+            "number": 188,
+            "archived": false,
+            "title": "Don't let un-scored items out of the backlog.",
+            "created_by": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "score": 3,
+            "assigned_to": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "type": "task"
+        },
+        {
+            "status": "accepted",
+            "product": {
+                "archived": false,
+                "id": 1,
+                "name": "sprint.ly"
+            },
+            "description": "",
+            "tags": [
+                "scoring",
+                "backlog"
+            ],
+            "number": 208,
+            "archived": false,
+            "title": "Add the ability to reply to comments via email.",
+            "created_by": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "score": 3,
+            "assigned_to": {
+                "first_name": "Joe",
+                "last_name": "Stump",
+                "id": 1,
+                "email": "joe@joestump.net"
+            },
+            "type": "task"
+        }
+    ]
