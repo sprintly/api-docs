@@ -1,0 +1,54 @@
+# Overview
+
+# `/products/{product_id}/items/{item_number}/comments.json`
+
+## GET
+
+Fetch comments for the given `item_number`. A list of comments ordered chronologoically are returned.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+## POST
+
+Create a new comment on the given `item_number` on behalf of the requesting user.
+
+### Arguments
+
+* `body` The comment's Markdown body. 
+
+### Example Response
+
+# `/products/{product_id}/items/{item_number}/comments/{comment_id}.json`
+
+## GET
+
+Returns the given `comment_id`.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+### Error Codes
+
+* `404` If `comment_id` id invalid or unknown.
+
+## DELETE
+
+Delete the comment specified by `comment_id`. **NOTE:** You cannot delete code commits via the API.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+### Error Codes
+
+* `404` If `comment_id` id invalid or unknown.
+* `403` If the `comment_id` is a code commit or the requesting user is not the original author of the commit.
