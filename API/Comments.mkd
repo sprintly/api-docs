@@ -1,5 +1,7 @@
 # Overview
 
+The comments API lets you fetch and manipulate comments made on items.
+
 # `/products/{product_id}/items/{item_number}/comments.json`
 
 ## GET
@@ -48,7 +50,7 @@ Create a new comment on the given `item_number` on behalf of the requesting user
 
 ### Arguments
 
-* `body` The comment's Markdown body. 
+* `body` (string, required): The comment's Markdown body. 
 
 ### Example Response
 

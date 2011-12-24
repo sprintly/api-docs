@@ -97,7 +97,7 @@ When you send a POST to this URI with the `blocked` argument, the requesting use
 
 ### Arguments
 
-* `blocked` The item number of the item being blocked by `item_number`.
+* `blocked` (integer, required): The item number of the item being blocked by `item_number`.
 
 ### Example Response
 
