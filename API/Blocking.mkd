@@ -89,7 +89,7 @@ This endpoint takes no arguments.
 ### Error Codes
 
 * `404` If `product_id` or `item_number` are invalid or unknown.
-* `400` If the user making the request is not a member of the `product_id`.
+* `403` If the user making the request is not a member of the `product_id`.
 
 ## POST
 
