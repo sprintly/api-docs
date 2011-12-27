@@ -43,7 +43,7 @@ Query a product's items by various arguments. If no arguments are provided, it w
                 "id": 1,
                 "email": "joe@joestump.net"
             },
-            "score": 3,
+            "score": "M",
             "assigned_to": {
                 "first_name": "Joe",
                 "last_name": "Stump",
@@ -73,7 +73,7 @@ Query a product's items by various arguments. If no arguments are provided, it w
                 "id": 1,
                 "email": "joe@joestump.net"
             },
-            "score": 3,
+            "score": "M",
             "assigned_to": {
                 "first_name": "Joe",
                 "last_name": "Stump",
@@ -101,6 +101,7 @@ Create a new item for the given product. This endpoint allows you to create new 
 * `what` (string, required for `story`) The what part of the story.
 * `why` (string, required for `story`) The why part of the story.
 * `description` (string) A description detailing the item. Markdown is allowed.
+* `score` (string) The initial score of the document. Only `~`, `S`, `M`, `L`, and `XL` are valid values.
 * `status` (string): Status of the new item. Default is `backlog`. Only `backlog`, `in-progress`, `completed`, and `accepted` are valid values.
 * `assigned_to` (integer) The user's `id` which the item should assigned to.
 * `tags` (string) A comma separated list of tags to assign to the item (e.g. `foo,bar,some other tag,baz`).
@@ -128,7 +129,7 @@ Create a new item for the given product. This endpoint allows you to create new 
             "id": 1,
             "email": "joe@joestump.net"
         },
-        "score": 3,
+        "score": "M",
         "assigned_to": {
             "first_name": "Joe",
             "last_name": "Stump",
@@ -176,7 +177,7 @@ This endpoint takes no arguments.
             "id": 1,
             "email": "joe@joestump.net"
         },
-        "score": 3,
+        "score": "M",
         "assigned_to": {
             "first_name": "Joe",
             "last_name": "Stump",
@@ -197,6 +198,7 @@ Update the specified item.
 * `what` (string, required for `story`) The new what part of the story.
 * `why` (string, required for `story`) The new why part of the story.
 * `description` (string) A new description for the item. Markdown is allowed.
+* `score` (string) The initial score of the document. Only `~`, `S`, `M`, `L`, and `XL` are valid values.
 * `status` (string): Change the status of the item. Only `backlog`, `in-progress`, `completed`, and `accepted` are valid values.
 * `assigned_to` (integer) The user's `id` which the item should be reassigned to.
 * `tags` (string) A comma separated list of tags to assign to the item (e.g. `foo,bar,some other tag,baz`). **WARNING:** This will replace the existing tags with the tags provided.
@@ -224,7 +226,7 @@ Update the specified item.
             "id": 1,
             "email": "joe@joestump.net"
         },
-        "score": 3,
+        "score": "M",
         "assigned_to": {
             "first_name": "Joe",
             "last_name": "Stump",
@@ -266,7 +268,7 @@ This endpoint takes no arguments.
             "id": 1,
             "email": "joe@joestump.net"
         },
-        "score": 3,
+        "score": "M",
         "assigned_to": {
             "first_name": "Joe",
             "last_name": "Stump",
@@ -311,7 +313,7 @@ This endpoint takes no arguments.
                 "id": 1,
                 "email": "joe@joestump.net"
             },
-            "score": 3,
+            "score": "M",
             "assigned_to": {
                 "first_name": "Joe",
                 "last_name": "Stump",
@@ -341,7 +343,7 @@ This endpoint takes no arguments.
                 "id": 1,
                 "email": "joe@joestump.net"
             },
-            "score": 3,
+            "score": "M",
             "assigned_to": {
                 "first_name": "Joe",
                 "last_name": "Stump",

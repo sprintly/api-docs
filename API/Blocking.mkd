@@ -43,7 +43,7 @@ This endpoint takes no arguments.
                     "id": 1,
                     "email": "joe@joestump.net"
                 },
-                "score": 3,
+                "score": "M",
                 "assigned_to": {
                     "first_name": "Joe",
                     "last_name": "Stump",
@@ -73,7 +73,7 @@ This endpoint takes no arguments.
                     "id": 1,
                     "email": "joe@joestump.net"
                 },
-                "score": 3,
+                "score": "M",
                 "assigned_to": {
                     "first_name": "Joe",
                     "last_name": "Stump",
@@ -129,7 +129,7 @@ When you send a POST to this URI with the `blocked` argument, the requesting use
                 "id": 1,
                 "email": "joe@joestump.net"
             },
-            "score": 3,
+            "score": "M",
             "assigned_to": {
                 "first_name": "Joe",
                 "last_name": "Stump",
@@ -159,7 +159,7 @@ When you send a POST to this URI with the `blocked` argument, the requesting use
                 "id": 1,
                 "email": "joe@joestump.net"
             },
-            "score": 3,
+            "score": "M",
             "assigned_to": {
                 "first_name": "Joe",
                 "last_name": "Stump",
@@ -216,7 +216,7 @@ This endpoint takes no arguments.
                 "id": 1,
                 "email": "joe@joestump.net"
             },
-            "score": 3,
+            "score": "M",
             "assigned_to": {
                 "first_name": "Joe",
                 "last_name": "Stump",
@@ -246,7 +246,7 @@ This endpoint takes no arguments.
                 "id": 1,
                 "email": "joe@joestump.net"
             },
-            "score": 3,
+            "score": "M",
             "assigned_to": {
                 "first_name": "Joe",
                 "last_name": "Stump",
@@ -300,7 +300,7 @@ This endpoint takes no arguments.
                 "id": 1,
                 "email": "joe@joestump.net"
             },
-            "score": 3,
+            "score": "M",
             "assigned_to": {
                 "first_name": "Joe",
                 "last_name": "Stump",
@@ -330,7 +330,7 @@ This endpoint takes no arguments.
                 "id": 1,
                 "email": "joe@joestump.net"
             },
-            "score": 3,
+            "score": "M",
             "assigned_to": {
                 "first_name": "Joe",
                 "last_name": "Stump",
