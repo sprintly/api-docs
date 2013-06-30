@@ -2,7 +2,7 @@
 
 The blocking API lets you find both which items are blocking an item and what items are being blocked by a given item. Additionally, you can create new blockers via the API.
 
-# `/products/{product_id}/items/{item_number}/blocking.json`
+#### `/products/{product_id}/items/{item_number}/blocking.json`
 
 ## GET
 
@@ -176,7 +176,7 @@ When you send a POST to this URI with the `blocked` argument, the requesting use
 * `404` If the `item_number` or `blocked` are invalid or unknown.
 * `400` If `blocked` is not provided or is invalid.
 
-# `/products/{product_id}/items/{item_number}/blocking/{block_id}.json`
+#### `/products/{product_id}/items/{item_number}/blocking/{block_id}.json`
 
 ## GET
 
