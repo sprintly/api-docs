@@ -2,7 +2,7 @@
 
 The items API allows you to fetch items from your products via the API. It gives access to various methods of filtering, adding blockers, favoriting items, getting and item's comments, etc. Basically, if you need to query for an item, or items, and manipulate them in some manner, this is the API you'd do it with.
 
-# `/products/{product_id}/items.json`
+#### `/products/{product_id}/items.json`
 
 ## GET
 
@@ -144,7 +144,7 @@ Create a new item for the given product. This endpoint allows you to create new 
 * `404` if `assigned_to` or `created_by` are invalid or unknown users.
 * `400` if you provide an invalid `type`, `status`, or `order_by` value.
 
-# `/products/{product_id}/items/{item_number}.json`
+#### `/products/{product_id}/items/{item_number}.json`
 
 ## GET
 
@@ -278,7 +278,7 @@ This endpoint takes no arguments.
         "type": "task"
     }
 
-# `/products/{product_id}/items/{item_number}/children.json`
+#### `/products/{product_id}/items/{item_number}/children.json`
 
 ## GET
 
