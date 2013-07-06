@@ -2,7 +2,7 @@
 
 The comments API lets you fetch and manipulate comments made on items.
 
-# `/products/{product_id}/items/{item_number}/comments.json`
+#### `/products/{product_id}/items/{item_number}/comments.json`
 
 ## GET
 
@@ -72,7 +72,7 @@ Create a new comment on the given `item_number` on behalf of the requesting user
 * `403` If the user making the request is not a member of the `product_id`.
 * `400` If `body` argument is missing.
 
-# `/products/{product_id}/items/{item_number}/comments/{comment_id}.json`
+#### `/products/{product_id}/items/{item_number}/comments/{comment_id}.json`
 
 ## GET
 
