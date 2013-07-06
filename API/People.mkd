@@ -2,7 +2,7 @@
 
 The people API endpoints allow you to manage the members of your various products. You can add members, fetch members for a product, or remove members.
 
-# `/api/products/{product_id}/people.json`
+#### `/api/products/{product_id}/people.json`
 
 ## GET
 
@@ -44,7 +44,7 @@ Sending a post to `/api/products/{product_id}/people.json` allows you to add inv
         "email": "joe@joestump.net"
     }
 
-# `/api/products/{product_id}/people/{user_id}.json`
+#### `/api/products/{product_id}/people/{user_id}.json`
 
 ## GET
 
