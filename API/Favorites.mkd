@@ -2,7 +2,7 @@
 
 The favorites API lets you access who has favorited a given item. Additionally, you can create and remove favorites via the API. 
 
-# `/products/{product_id}/items/{item_number}/favorites.json`
+#### `/products/{product_id}/items/{item_number}/favorites.json`
 
 ## GET
 
@@ -48,7 +48,7 @@ This endpoint takes no arguments.
 
 * `404` If `item_number` or `product_id` are invalid or unknown.
 
-# `/products/{product_id}/items/{item_number}/favorites/{favorite_id}.json`
+#### `/products/{product_id}/items/{item_number}/favorites/{favorite_id}.json`
 
 ## GET
 
