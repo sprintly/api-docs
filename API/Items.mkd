@@ -11,7 +11,7 @@ Query a product's items by various arguments. If no arguments are provided, it w
 ### Arguments
 
 * `type` (string): Specify which type of items to return. Only  `story`, `task`, `defect`, and `test` are valid values.
-* `status` (string): Only return items that are in the status provided. Only `backlog`, `in-progress`, `completed`, and `accepted` are valid values.
+* `status` (string): Only return items that are in the status provided. Only `someday`, `backlog`, `in-progress`, `completed`, and `accepted` are valid values.
 * `offset` (integer, default=0) A zero-index offset from which to start returning results. This, combined with `limit`, lets you page through all of your items.
 * `limit` (integer, default=20) How many items to return in the result. If a value higher than `100` is provided, it will override your value with a value of `100`.
 * `order_by` (string) Order  the result set by a specific metric. Only `priority` and `favorites` are valid values.
@@ -102,7 +102,7 @@ Create a new item for the given product. This endpoint allows you to create new 
 * `why` (string, required for `story`) The why part of the story.
 * `description` (string) A description detailing the item. Markdown is allowed.
 * `score` (string) The initial score of the document. Only `~`, `S`, `M`, `L`, and `XL` are valid values.
-* `status` (string): Status of the new item. Default is `backlog`. Only `backlog`, `in-progress`, `completed`, and `accepted` are valid values.
+* `status` (string): Status of the new item. Default is `someday`. Only `someday`, `backlog`, `in-progress`, `completed`, and `accepted` are valid values.
 * `assigned_to` (integer) The user's `id` which the item should assigned to.
 * `tags` (string) A comma separated list of tags to assign to the item (e.g. `foo,bar,some other tag,baz`).
 
