@@ -1,0 +1,48 @@
+# Overview
+
+The Products API returns a list of products your API Key has access to.  All other API calls require a product ID. Use this API endpoint to fetch a list of product ID's.
+
+#### `/products/products.json`
+
+## GET
+
+Returns a list of products your API Key has access to.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+```json
+[
+  {
+    "archived": true,
+    "name": "Archived Project",
+    "admin": true,
+    "created_at": "2012-11-14T01:37:47+00:00",
+    "id": 1234,
+    "email": {
+      "tests": "tests-1234@items.sprint.ly",
+      "tasks": "tasks-1234@items.sprint.ly",
+      "stories": "stories-1234@items.sprint.ly",
+      "defects": "defects-1234@items.sprint.ly",
+      "backlog": "backlog-1234@items.sprint.ly"
+    }
+  },
+  {
+    "archived": false,
+    "name": "Active Project",
+    "admin": true,
+    "created_at": "2014-09-16T23:36:00+00:00",
+    "id": 5678,
+    "email": {
+      "tests": "tests-5678@items.sprint.ly",
+      "tasks": "tasks-5678@items.sprint.ly",
+      "stories": "stories-5678@items.sprint.ly",
+      "defects": "defects-5678@items.sprint.ly",
+      "backlog": "backlog-5678@items.sprint.ly"
+    }
+  }
+]
+```
