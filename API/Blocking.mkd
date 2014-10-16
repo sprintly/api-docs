@@ -191,7 +191,7 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-```josn
+```json
 {
     "user": {
         "first_name": "Joe",
