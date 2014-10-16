@@ -1,6 +1,6 @@
 ## Introduction
 
-Sprint.ly's API uses basic HTTP-Auth over SSL. The only difference is that you use your API key rather than your account's password as your password. You can find your API key on your [account profile](https://sprint.ly/account/profile/). Your username is your account's email address.
+Sprint.ly's API uses basic HTTP-Auth over SSL. The only difference is that you use your API key rather than your account's password as your password. You can find your API key on your [account profile](https://sprint.ly). Your username is your account's email address.
 
 ## Example
 
