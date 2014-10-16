@@ -2,7 +2,7 @@
 
 The Products API returns a list of products your API Key has access to.  All other API calls require a product ID. Use this API endpoint to fetch a list of product ID's.
 
-#### `/products/products.json`
+#### `/products.json`
 
 ## GET
 
