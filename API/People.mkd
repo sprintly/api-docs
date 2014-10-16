@@ -14,15 +14,17 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    [
-        {
-            "admin": true,
-            "first_name": "Joe",
-            "last_name": "Stump",
-            "id": 1,
-            "email": "joe@joestump.net"
-        }
-    ]
+```json
+[
+    {
+        "admin": true,
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    }
+]
+```
 
 ## POST
 
@@ -37,12 +39,14 @@ Sending a post to `/products/{product_id}/people.json` allows you to add invite 
 
 ### Example Response
 
-    {
-        "admin": true,
-        "first_name": "Joe",
-        "last_name": "Stump",
-        "email": "joe@joestump.net"
-    }
+```json
+{
+    "admin": true,
+    "first_name": "Joe",
+    "last_name": "Stump",
+    "email": "joe@joestump.net"
+}
+```
 
 #### `/products/{product_id}/people/{user_id}.json`
 
@@ -56,13 +60,15 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    {
-        "admin": true,
-        "first_name": "Joe",
-        "last_name": "Stump",
-        "id": 1,
-        "email": "joe@joestump.net"
-    }
+```json
+{
+    "admin": true,
+    "first_name": "Joe",
+    "last_name": "Stump",
+    "id": 1,
+    "email": "joe@joestump.net"
+}
+```
 
 
 ## DELETE
@@ -75,10 +81,12 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    {
-        "admin": true,
-        "first_name": "Joe",
-        "last_name": "Stump",
-        "id": 1,
-        "email": "joe@joestump.net"
-    }
+```json
+{
+    "admin": true,
+    "first_name": "Joe",
+    "last_name": "Stump",
+    "id": 1,
+    "email": "joe@joestump.net"
+}
+```
