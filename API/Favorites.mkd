@@ -16,12 +16,30 @@ This endpoint takes no arguments.
 
 ```json
 [
-    {
-        "first_name": "Joe",
-        "last_name": "Stump",
-        "id": 1,
-        "email": "joe@joestump.net"
+  {
+    "created_at": "2014-10-16T05:18:45+00:00",
+    "id": 12345,
+    "user": {
+      "first_name": "Joe",
+      "last_name": "Stump",
+      "created_at": "2012-08-18T05:34:30+00:00",
+      "email": "joe@joestump.net",
+      "last_login": "2014-10-11T00:13:16+00:00",
+      "id": 1
     }
+  },
+  {
+    "created_at": "2014-10-16T04:48:34+00:00",
+    "id": 12346,
+    "user": {
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "created_at": "2012-08-18T05:34:30+00:00",
+      "email": "jane.doe@email.com",
+      "last_login": "2014-10-11T00:13:16+00:00",
+      "id": 2
+    }
+  }
 ]
 ```
 
@@ -41,10 +59,16 @@ This endpoint takes no arguments.
 
 ```json
 {
+  "created_at": "2014-10-16T05:30:33+00:00",
+  "id": 12345,
+  "user": {
     "first_name": "Joe",
     "last_name": "Stump",
-    "id": 1,
-    "email": "joe@joestump.net"
+    "created_at": "2012-08-18T05:34:30+00:00",
+    "email": "joe@joestump.net",
+    "last_login": "2014-10-11T00:13:16+00:00",
+    "id": 1
+  }
 }
 ```
 
@@ -66,10 +90,16 @@ This endpoint takes no arguments.
 
 ```json
 {
+  "created_at": "2014-10-16T04:48:34+00:00",
+  "id": 11134,
+  "user": {
     "first_name": "Joe",
     "last_name": "Stump",
-    "id": 1,
-    "email": "joe@joestump.net"
+    "created_at": "2012-08-18T05:34:30+00:00",
+    "email": "joe@joestump.net",
+    "last_login": "2014-10-11T00:13:16+00:00",
+    "id": 1
+  }
 }
 ```
 
@@ -89,10 +119,16 @@ This endpoint takes no arguments.
 
 ```json
 {
+  "created_at": "2014-10-16T05:30:33+00:00",
+  "id": 12345,
+  "user": {
     "first_name": "Joe",
     "last_name": "Stump",
-    "id": 1,
-    "email": "joe@joestump.net"
+    "created_at": "2012-08-18T05:34:30+00:00",
+    "email": "joe@joestump.net",
+    "last_login": "2014-10-11T00:13:16+00:00",
+    "id": 1
+  }
 }
 ```
 
