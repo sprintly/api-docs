@@ -14,30 +14,32 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    [
-        {
-            "body": "Refs #285 and #286.\n\n* Mapped out a URL callback for EmailYak.\n* Set up settings, urls, etc. and a stubbed view for EmailYak.\n\nRan into a problem where you have to register every single email address you wish to receive email for. This would result in us having to make an API call for every single item and every single product created in the system. I've emailed the EmailYak guys and am hoping they'll have a fix by next week. This is blocking until then.",
-            "type": "commit",
-            "id": 400,
-            "created_by": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            }
-        },
-        {
-            "body": "Finished up the work for handling incoming emails to bugs and tasks. Closes #285, #286, #287, and #291. This now requires the [python-transloadit](https://github.com/joestump/python-transloadit) client that I created.",
-            "type": "commit",
-            "id": 445,
-            "created_by": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            }
+```json
+[
+    {
+        "body": "Refs #285 and #286.\n\n* Mapped out a URL callback for EmailYak.\n* Set up settings, urls, etc. and a stubbed view for EmailYak.\n\nRan into a problem where you have to register every single email address you wish to receive email for. This would result in us having to make an API call for every single item and every single product created in the system. I've emailed the EmailYak guys and am hoping they'll have a fix by next week. This is blocking until then.",
+        "type": "commit",
+        "id": 400,
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
         }
-    ]
+    },
+    {
+        "body": "Finished up the work for handling incoming emails to bugs and tasks. Closes #285, #286, #287, and #291. This now requires the [python-transloadit](https://github.com/joestump/python-transloadit) client that I created.",
+        "type": "commit",
+        "id": 445,
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        }
+    }
+]
+```
 
 ### Error Codes
 
@@ -54,17 +56,19 @@ Create a new comment on the given `item_number` on behalf of the requesting user
 
 ### Example Response
 
-    {
-        "body": "These mockups look amazing. However, I think we should make the running guy glow when the AJAX queries are running instead of the 'Working...' header we have.",
-        "type": "comment",
-        "id": 445,
-        "created_by": {
-            "first_name": "Joe",
-            "last_name": "Stump",
-            "id": 1,
-            "email": "joe@joestump.net"
-        }
+```json
+{
+    "body": "These mockups look amazing. However, I think we should make the running guy glow when the AJAX queries are running instead of the 'Working...' header we have.",
+    "type": "comment",
+    "id": 445,
+    "created_by": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
     }
+}
+```
 
 ### Error Codes
 
@@ -84,17 +88,19 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    {
-        "body": "These mockups look amazing. However, I think we should make the running guy glow when the AJAX queries are running instead of the 'Working...' header we have.",
-        "type": "comment",
-        "id": 445,
-        "created_by": {
-            "first_name": "Joe",
-            "last_name": "Stump",
-            "id": 1,
-            "email": "joe@joestump.net"
-        }
+```json
+{
+    "body": "These mockups look amazing. However, I think we should make the running guy glow when the AJAX queries are running instead of the 'Working...' header we have.",
+    "type": "comment",
+    "id": 445,
+    "created_by": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
     }
+}
+```
 
 ### Error Codes
 
@@ -111,17 +117,19 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    {
-        "body": "These mockups look amazing. However, I think we should make the running guy glow when the AJAX queries are running instead of the 'Working...' header we have.",
-        "type": "comment",
-        "id": 445,
-        "created_by": {
-            "first_name": "Joe",
-            "last_name": "Stump",
-            "id": 1,
-            "email": "joe@joestump.net"
-        }
+```json
+{
+    "body": "These mockups look amazing. However, I think we should make the running guy glow when the AJAX queries are running instead of the 'Working...' header we have.",
+    "type": "comment",
+    "id": 445,
+    "created_by": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
     }
+}
+```
 
 ### Error Codes
 

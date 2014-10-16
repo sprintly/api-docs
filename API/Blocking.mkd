@@ -14,93 +14,8 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    [
-        {
-            "user": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "item": {
-                "status": "backlog",
-                "product": {
-                    "archived": false,
-                    "id": 1,
-                    "name": "sprint.ly"
-                },
-                "description": "Require people to estimate the score of an item before they can start working on it.",
-                "tags": [
-                    "scoring",
-                    "backlog"
-                ],
-                "number": 188,
-                "archived": false,
-                "title": "Don't let un-scored items out of the backlog.",
-                "created_by": {
-                    "first_name": "Joe",
-                    "last_name": "Stump",
-                    "id": 1,
-                    "email": "joe@joestump.net"
-                },
-                "score": "M",
-                "assigned_to": {
-                    "first_name": "Joe",
-                    "last_name": "Stump",
-                    "id": 1,
-                    "email": "joe@joestump.net"
-                },
-                "type": "task"
-            },
-            "blocked": {
-                "status": "accepted",
-                "product": {
-                    "archived": false,
-                    "id": 1,
-                    "name": "sprint.ly"
-                },
-                "description": "",
-                "tags": [
-                    "scoring",
-                    "backlog"
-                ],
-                "number": 208,
-                "archived": false,
-                "title": "Add the ability to reply to comments via email.",
-                "created_by": {
-                    "first_name": "Joe",
-                    "last_name": "Stump",
-                    "id": 1,
-                    "email": "joe@joestump.net"
-                },
-                "score": "M",
-                "assigned_to": {
-                    "first_name": "Joe",
-                    "last_name": "Stump",
-                    "id": 1,
-                    "email": "joe@joestump.net"
-                },
-                "type": "task"
-            },
-            "unblocked": true
-        }
-    ]
-
-### Error Codes
-
-* `404` If `product_id` or `item_number` are invalid or unknown.
-* `403` If the user making the request is not a member of the `product_id`.
-
-## POST
-
-When you send a POST to this URI with the `blocked` argument, the requesting user is creating a new block in the system which is indicating that `item_number` is blocking the item number indicated by the `blocked` argument. This API call will kick off an email telling the `assigned_to` user of `item_number` that they are blocking the requesting user on `blocked`.
-
-### Arguments
-
-* `blocked` (integer, required): The item number of the item being blocked by `item_number`.
-
-### Example Response
-
+```json
+[
     {
         "user": {
             "first_name": "Joe",
@@ -170,6 +85,94 @@ When you send a POST to this URI with the `blocked` argument, the requesting use
         },
         "unblocked": true
     }
+]
+```
+### Error Codes
+
+* `404` If `product_id` or `item_number` are invalid or unknown.
+* `403` If the user making the request is not a member of the `product_id`.
+
+## POST
+
+When you send a POST to this URI with the `blocked` argument, the requesting user is creating a new block in the system which is indicating that `item_number` is blocking the item number indicated by the `blocked` argument. This API call will kick off an email telling the `assigned_to` user of `item_number` that they are blocking the requesting user on `blocked`.
+
+### Arguments
+
+* `blocked` (integer, required): The item number of the item being blocked by `item_number`.
+
+### Example Response
+
+```json
+{
+    "user": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "item": {
+        "status": "backlog",
+        "product": {
+            "archived": false,
+            "id": 1,
+            "name": "sprint.ly"
+        },
+        "description": "Require people to estimate the score of an item before they can start working on it.",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 188,
+        "archived": false,
+        "title": "Don't let un-scored items out of the backlog.",
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "score": "M",
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "type": "task"
+    },
+    "blocked": {
+        "status": "accepted",
+        "product": {
+            "archived": false,
+            "id": 1,
+            "name": "sprint.ly"
+        },
+        "description": "",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 208,
+        "archived": false,
+        "title": "Add the ability to reply to comments via email.",
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "score": "M",
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "type": "task"
+    },
+    "unblocked": true
+}
+```
 
 ### Error Codes
 
@@ -188,75 +191,77 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    {
-        "user": {
+```json
+{
+    "user": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "item": {
+        "status": "backlog",
+        "product": {
+            "archived": false,
+            "id": 1,
+            "name": "sprint.ly"
+        },
+        "description": "Require people to estimate the score of an item before they can start working on it.",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 188,
+        "archived": false,
+        "title": "Don't let un-scored items out of the backlog.",
+        "created_by": {
             "first_name": "Joe",
             "last_name": "Stump",
             "id": 1,
             "email": "joe@joestump.net"
         },
-        "item": {
-            "status": "backlog",
-            "product": {
-                "archived": false,
-                "id": 1,
-                "name": "sprint.ly"
-            },
-            "description": "Require people to estimate the score of an item before they can start working on it.",
-            "tags": [
-                "scoring",
-                "backlog"
-            ],
-            "number": 188,
-            "archived": false,
-            "title": "Don't let un-scored items out of the backlog.",
-            "created_by": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "score": "M",
-            "assigned_to": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "type": "task"
+        "score": "M",
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
         },
-        "blocked": {
-            "status": "accepted",
-            "product": {
-                "archived": false,
-                "id": 1,
-                "name": "sprint.ly"
-            },
-            "description": "",
-            "tags": [
-                "scoring",
-                "backlog"
-            ],
-            "number": 208,
+        "type": "task"
+    },
+    "blocked": {
+        "status": "accepted",
+        "product": {
             "archived": false,
-            "title": "Add the ability to reply to comments via email.",
-            "created_by": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "score": "M",
-            "assigned_to": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "type": "task"
+            "id": 1,
+            "name": "sprint.ly"
         },
-        "unblocked": true
-    }
+        "description": "",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 208,
+        "archived": false,
+        "title": "Add the ability to reply to comments via email.",
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "score": "M",
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "type": "task"
+    },
+    "unblocked": true
+}
+```
 
 ### Error Codes
 
@@ -272,75 +277,77 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    {
-        "user": {
+```json
+{
+    "user": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "item": {
+        "status": "backlog",
+        "product": {
+            "archived": false,
+            "id": 1,
+            "name": "sprint.ly"
+        },
+        "description": "Require people to estimate the score of an item before they can start working on it.",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 188,
+        "archived": false,
+        "title": "Don't let un-scored items out of the backlog.",
+        "created_by": {
             "first_name": "Joe",
             "last_name": "Stump",
             "id": 1,
             "email": "joe@joestump.net"
         },
-        "item": {
-            "status": "backlog",
-            "product": {
-                "archived": false,
-                "id": 1,
-                "name": "sprint.ly"
-            },
-            "description": "Require people to estimate the score of an item before they can start working on it.",
-            "tags": [
-                "scoring",
-                "backlog"
-            ],
-            "number": 188,
-            "archived": false,
-            "title": "Don't let un-scored items out of the backlog.",
-            "created_by": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "score": "M",
-            "assigned_to": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "type": "task"
+        "score": "M",
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
         },
-        "blocked": {
-            "status": "accepted",
-            "product": {
-                "archived": false,
-                "id": 1,
-                "name": "sprint.ly"
-            },
-            "description": "",
-            "tags": [
-                "scoring",
-                "backlog"
-            ],
-            "number": 208,
+        "type": "task"
+    },
+    "blocked": {
+        "status": "accepted",
+        "product": {
             "archived": false,
-            "title": "Add the ability to reply to comments via email.",
-            "created_by": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "score": "M",
-            "assigned_to": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "type": "task"
+            "id": 1,
+            "name": "sprint.ly"
         },
-        "unblocked": true
-    }
+        "description": "",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 208,
+        "archived": false,
+        "title": "Add the ability to reply to comments via email.",
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "score": "M",
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "type": "task"
+    },
+    "unblocked": true
+}
+```
 
 ### Error Codes
 

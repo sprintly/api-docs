@@ -14,14 +14,16 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    [
-        {
-            "first_name": "Joe",
-            "last_name": "Stump",
-            "id": 1,
-            "email": "joe@joestump.net"
-        }
-    ]
+```json
+[
+    {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    }
+]
+```
 
 ### Error Codes
 
@@ -37,12 +39,14 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    {
-        "first_name": "Joe",
-        "last_name": "Stump",
-        "id": 1,
-        "email": "joe@joestump.net"
-    }
+```json
+{
+    "first_name": "Joe",
+    "last_name": "Stump",
+    "id": 1,
+    "email": "joe@joestump.net"
+}
+```
 
 ### Error Codes
 
@@ -60,12 +64,14 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    {
-        "first_name": "Joe",
-        "last_name": "Stump",
-        "id": 1,
-        "email": "joe@joestump.net"
-    }
+```json
+{
+    "first_name": "Joe",
+    "last_name": "Stump",
+    "id": 1,
+    "email": "joe@joestump.net"
+}
+```
 
 ### Error Codes
 
@@ -81,12 +87,14 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    {
-        "first_name": "Joe",
-        "last_name": "Stump",
-        "id": 1,
-        "email": "joe@joestump.net"
-    }
+```json
+{
+    "first_name": "Joe",
+    "last_name": "Stump",
+    "id": 1,
+    "email": "joe@joestump.net"
+}
+```
 
 ### Error Codes
 
