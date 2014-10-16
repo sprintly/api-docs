@@ -21,68 +21,70 @@ Query a product's items by various arguments. If no arguments are provided, it w
 
 ### Example Response
 
-    [
-        {
-            "status": "backlog",
-            "product": {
-                "archived": false,
-                "id": 1,
-                "name": "sprint.ly"
-            },
-            "description": "Require people to estimate the score of an item before they can start working on it.",
-            "tags": [
-                "scoring",
-                "backlog"
-            ],
-            "number": 188,
+```json
+[
+    {
+        "status": "backlog",
+        "product": {
             "archived": false,
-            "title": "Don't let un-scored items out of the backlog.",
-            "created_by": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "score": "M",
-            "assigned_to": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "type": "task"
+            "id": 1,
+            "name": "sprint.ly"
         },
-        {
-            "status": "accepted",
-            "product": {
-                "archived": false,
-                "id": 1,
-                "name": "sprint.ly"
-            },
-            "description": "",
-            "tags": [
-                "scoring",
-                "backlog"
-            ],
-            "number": 208,
+        "description": "Require people to estimate the score of an item before they can start working on it.",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 188,
+        "archived": false,
+        "title": "Don't let un-scored items out of the backlog.",
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "score": "M",
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "type": "task"
+    },
+    {
+        "status": "accepted",
+        "product": {
             "archived": false,
-            "title": "Add the ability to reply to comments via email.",
-            "created_by": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "score": "M",
-            "assigned_to": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "type": "task"
-        }
-    ]
+            "id": 1,
+            "name": "sprint.ly"
+        },
+        "description": "",
+        "tags": [
+            "scoring",
+            "backlog"
+        ],
+        "number": 208,
+        "archived": false,
+        "title": "Add the ability to reply to comments via email.",
+        "created_by": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "score": "M",
+        "assigned_to": {
+            "first_name": "Joe",
+            "last_name": "Stump",
+            "id": 1,
+            "email": "joe@joestump.net"
+        },
+        "type": "task"
+    }
+]
+```
 
 ### Error Codes
 
@@ -108,36 +110,38 @@ Create a new item for the given product. This endpoint allows you to create new 
 
 ### Example Response
 
-    {
-        "status": "backlog",
-        "product": {
-            "archived": false,
-            "id": 1,
-            "name": "sprint.ly"
-        },
-        "description": "Require people to estimate the score of an item before they can start working on it.",
-        "tags": [
-            "scoring",
-            "backlog"
-        ],
-        "number": 188,
+```json
+{
+    "status": "backlog",
+    "product": {
         "archived": false,
-        "title": "Don't let un-scored items out of the backlog.",
-        "created_by": {
-            "first_name": "Joe",
-            "last_name": "Stump",
-            "id": 1,
-            "email": "joe@joestump.net"
-        },
-        "score": "M",
-        "assigned_to": {
-            "first_name": "Joe",
-            "last_name": "Stump",
-            "id": 1,
-            "email": "joe@joestump.net"
-        },
-        "type": "task"
-    }
+        "id": 1,
+        "name": "sprint.ly"
+    },
+    "description": "Require people to estimate the score of an item before they can start working on it.",
+    "tags": [
+        "scoring",
+        "backlog"
+    ],
+    "number": 188,
+    "archived": false,
+    "title": "Don't let un-scored items out of the backlog.",
+    "created_by": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "score": "M",
+    "assigned_to": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "type": "task"
+}
+```
 
 ### Error Codes
 
@@ -156,36 +160,38 @@ This endpoint takes no arguments.
 
 ### Example Response
 
-    {
-        "status": "accepted",
-        "product": {
-            "archived": false,
-            "id": 1,
-            "name": "sprint.ly"
-        },
-        "description": "Require people to estimate the score of an item before they can start working on it.",
-        "tags": [
-            "scoring",
-            "backlog"
-        ],
-        "number": 188,
+```json
+{
+    "status": "accepted",
+    "product": {
         "archived": false,
-        "title": "Don't let un-scored items out of the backlog.",
-        "created_by": {
-            "first_name": "Joe",
-            "last_name": "Stump",
-            "id": 1,
-            "email": "joe@joestump.net"
-        },
-        "score": "M",
-        "assigned_to": {
-            "first_name": "Joe",
-            "last_name": "Stump",
-            "id": 1,
-            "email": "joe@joestump.net"
-        },
-        "type": "task"
-    }
+        "id": 1,
+        "name": "sprint.ly"
+    },
+    "description": "Require people to estimate the score of an item before they can start working on it.",
+    "tags": [
+        "scoring",
+        "backlog"
+    ],
+    "number": 188,
+    "archived": false,
+    "title": "Don't let un-scored items out of the backlog.",
+    "created_by": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "score": "M",
+    "assigned_to": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "type": "task"
+}
+```
 
 ## POST
 
@@ -205,8 +211,98 @@ Update the specified item.
 
 ### Example Response
 
+```json
+{
+    "status": "accepted",
+    "product": {
+        "archived": false,
+        "id": 1,
+        "name": "sprint.ly"
+    },
+    "description": "Require people to estimate the score of an item before they can start working on it.",
+    "tags": [
+        "scoring",
+        "backlog"
+    ],
+    "number": 188,
+    "archived": false,
+    "title": "Don't let un-scored items out of the backlog.",
+    "created_by": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "score": "M",
+    "assigned_to": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "type": "task"
+}
+```
+
+## DELETE
+
+Archive the specified item. **NOTE:** This does not delete the item. Destructive operations are not allowed via the API on items.
+
+### Arguments 
+
+This endpoint takes no arguments.
+
+### Example Response
+
+```json
+{
+    "status": "backlog",
+    "product": {
+        "archived": false,
+        "id": 1,
+        "name": "sprint.ly"
+    },
+    "description": "Require people to estimate the score of an item before they can start working on it.",
+    "tags": [
+        "scoring",
+        "backlog"
+    ],
+    "number": 188,
+    "archived": true,
+    "title": "Don't let un-scored items out of the backlog.",
+    "created_by": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "score": "M",
+    "assigned_to": {
+        "first_name": "Joe",
+        "last_name": "Stump",
+        "id": 1,
+        "email": "joe@joestump.net"
+    },
+    "type": "task"
+}
+```
+
+#### `/products/{product_id}/items/{item_number}/children.json`
+
+## GET
+
+Returns any child items. **NOTE:** This only works on items that are of type `story` as they are the only type of item which are allowed to have child items.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+```json
+[
     {
-        "status": "accepted",
+        "status": "backlog",
         "product": {
             "archived": false,
             "id": 1,
@@ -234,34 +330,22 @@ Update the specified item.
             "email": "joe@joestump.net"
         },
         "type": "task"
-    }
-
-
-## DELETE
-
-Archive the specified item. **NOTE:** This does not delete the item. Destructive operations are not allowed via the API on items.
-
-### Arguments 
-
-This endpoint takes no arguments.
-
-### Example Response
-
+    },
     {
-        "status": "backlog",
+        "status": "accepted",
         "product": {
             "archived": false,
             "id": 1,
             "name": "sprint.ly"
         },
-        "description": "Require people to estimate the score of an item before they can start working on it.",
+        "description": "",
         "tags": [
             "scoring",
             "backlog"
         ],
-        "number": 188,
-        "archived": true,
-        "title": "Don't let un-scored items out of the backlog.",
+        "number": 208,
+        "archived": false,
+        "title": "Add the ability to reply to comments via email.",
         "created_by": {
             "first_name": "Joe",
             "last_name": "Stump",
@@ -277,79 +361,5 @@ This endpoint takes no arguments.
         },
         "type": "task"
     }
-
-#### `/products/{product_id}/items/{item_number}/children.json`
-
-## GET
-
-Returns any child items. **NOTE:** This only works on items that are of type `story` as they are the only type of item which are allowed to have child items.
-
-### Arguments
-
-This endpoint takes no arguments.
-
-### Example Response
-
-
-    [
-        {
-            "status": "backlog",
-            "product": {
-                "archived": false,
-                "id": 1,
-                "name": "sprint.ly"
-            },
-            "description": "Require people to estimate the score of an item before they can start working on it.",
-            "tags": [
-                "scoring",
-                "backlog"
-            ],
-            "number": 188,
-            "archived": false,
-            "title": "Don't let un-scored items out of the backlog.",
-            "created_by": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "score": "M",
-            "assigned_to": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "type": "task"
-        },
-        {
-            "status": "accepted",
-            "product": {
-                "archived": false,
-                "id": 1,
-                "name": "sprint.ly"
-            },
-            "description": "",
-            "tags": [
-                "scoring",
-                "backlog"
-            ],
-            "number": 208,
-            "archived": false,
-            "title": "Add the ability to reply to comments via email.",
-            "created_by": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "score": "M",
-            "assigned_to": {
-                "first_name": "Joe",
-                "last_name": "Stump",
-                "id": 1,
-                "email": "joe@joestump.net"
-            },
-            "type": "task"
-        }
-    ]
+]
+```
