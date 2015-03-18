@@ -1,0 +1,137 @@
+# Overview
+
+The pull request API allows you to query for pull requests made to a given product.
+
+#### `/products/{product_id}/pullrequests.json`
+
+## GET
+
+Return a list of pull request objects for the given `product_id`.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+```json
+[{
+    "body": "Pull request body",
+    "items": [
+        9239
+    ],
+    "number": 1799,
+    "user": {
+        "first_name": "Nicholas",
+        "last_name": "Serra",
+        "created_at": "2011-12-10T19:28:42+00:00",
+        "email": "nserra@quickleft.com",
+        "last_login": "2015-02-26T06:43:36+00:00",
+        "id": 1
+    },
+    "title": "SortableTable item numbers shoud be permalinks"
+}, {
+    "body": "Another pull request body",
+    "items": [
+        9213,
+        9214,
+        9221
+    ],
+    "number": 1792,
+    "user": {
+        "first_name": "Nicholas",
+        "last_name": "Serra",
+        "created_at": "2013-08-15T06:30:07+00:00",
+        "email": "nserra@quickleft.com",
+        "last_login": "2015-02-26T00:59:10+00:00",
+        "id": 1
+    },
+    "title": "9213 moar onboarding"
+}]
+```
+
+### Error Codes
+
+* `404` If `product_id` is invalid or unknown.
+
+#### `/products/{product_id}/pullrequests/{pull_request_number}.json`
+
+## GET
+
+Return a single pull request object for the given `pull_request_number`.
+
+### Arguments
+
+This endpoint takes no arguments.
+
+### Example Response
+
+```json
+{
+    "body": "Pull request body",
+    "items": [{
+        "status": "in-progress",
+        "product": {
+            "archived": false,
+            "id": 1,
+            "name": "sprint.ly"
+        },
+        "description": "Post from customer community",
+        "tags": ["github", "attachments", "item detail"],
+        "short_url": "http://sprint.ly/i/1/9206/",
+        "number": 9206,
+        "deployed_to": [],
+        "last_modified": "2015-02-28T02:46:38+00:00",
+        "counts": {
+            "blockers": 0,
+            "blocking": 0,
+            "favorites": 0,
+            "comments": 0
+        },
+        "who": "Sprintly user",
+        "why": "can include screenshots quicker",
+        "what": "to be able to copy and paste screenshots into comments like GitHub",
+        "title": "As a Sprintly user, I want to be able to copy and paste screenshots into comments like GitHub so that can include screenshots quicker.",
+        "created_at": "2015-02-23T18:07:10+00:00",
+        "created_by": {
+            "first_name": "Nicholas",
+            "last_name": "Serra",
+            "created_at": "2013-07-24T17:48:47+00:00",
+            "email": "nserra@quickleft.com",
+            "last_login": "2015-02-27T16:59:14+00:00",
+            "id": 1
+        },
+        "score": "~",
+        "assigned_to": {
+            "first_name": "Nicholas",
+            "last_name": "Serra",
+            "created_at": "2014-05-12T21:19:28+00:00",
+            "email": "nserra@quickleft.com",
+            "last_login": "2015-02-23T18:08:20+00:00",
+            "id": 1
+        },
+        "progress": {
+            "started_at": "2015-02-25T21:01:50+00:00"
+        },
+        "type": "story",
+        "email": {
+            "files": "files-1019356@items.sprint.ly",
+            "discussion": "discussion-1019356@items.sprint.ly"
+        }
+    }],
+    "number": 1799,
+    "user": {
+        "first_name": "Nicholas",
+        "last_name": "Serra",
+        "created_at": "2014-05-12T21:19:28+00:00",
+        "email": "nserra@quickleft.com",
+        "last_login": "2015-02-23T18:08:20+00:00",
+        "id": 1
+    },
+    "title": "Paste image into comment box"
+}
+```
+
+### Error Codes
+
+* `404` If `pull_request_number` is invalid or unknown.
