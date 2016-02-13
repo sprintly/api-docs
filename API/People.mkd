@@ -17,11 +17,17 @@ This endpoint takes no arguments.
 ```json
 [
     {
-        "admin": true,
+        "pk": ​1,
+        "product": ​1,
+        "user": ​1,
         "first_name": "Joe",
         "last_name": "Stump",
-        "id": 1,
-        "email": "joe@joestump.net"
+        "email": "joe@sprint.ly",
+        "revoked": false,
+        "created": "2011-06-07T21:44:36+00:00",
+        "modified": "2011-06-13T23:02:55+00:00",
+        "admin": true,
+        "role": "AA"
     }
 ]
 ```
@@ -41,10 +47,17 @@ Sending a post to `/products/{product_id}/people.json` allows you to add invite 
 
 ```json
 {
-    "admin": true,
+    "pk": ​1,
+    "product": ​1,
+    "user": ​1,
     "first_name": "Joe",
     "last_name": "Stump",
-    "email": "joe@joestump.net"
+    "email": "joe@sprint.ly",
+    "revoked": false,
+    "created": "2011-06-07T21:44:36+00:00",
+    "modified": "2011-06-13T23:02:55+00:00",
+    "admin": true,
+    "role": "AA"
 }
 ```
 
@@ -62,11 +75,17 @@ This endpoint takes no arguments.
 
 ```json
 {
-    "admin": true,
+    "pk": ​1,
+    "product": ​1,
+    "user": ​1,
     "first_name": "Joe",
     "last_name": "Stump",
-    "id": 1,
-    "email": "joe@joestump.net"
+    "email": "joe@sprint.ly",
+    "revoked": false,
+    "created": "2011-06-07T21:44:36+00:00",
+    "modified": "2011-06-13T23:02:55+00:00",
+    "admin": true,
+    "role": "AA"
 }
 ```
 
@@ -83,10 +102,16 @@ This endpoint takes no arguments.
 
 ```json
 {
-    "admin": true,
+    "pk": ​1,
+    "product": ​1,
+    "user": ​1,
     "first_name": "Joe",
     "last_name": "Stump",
-    "id": 1,
-    "email": "joe@joestump.net"
+    "email": "joe@sprint.ly",
+    "revoked": false,
+    "created": "2011-06-07T21:44:36+00:00",
+    "modified": "2011-06-13T23:02:55+00:00",
+    "admin": true,
+    "role": "AA"
 }
 ```
